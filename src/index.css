@@ -3,3 +3,41 @@
 * {
 	font-family: 'Outfit', sans-serif;
 }
+
+@layer utilities {
+	.gradient-border {
+		@apply relative bg-linear-45 from-[#BD00FF] from-40% via-[#CCFF00] via-50% to-[#3958FC] to-70% p-0.5 rounded-full hover:bg-linear-135;
+	}
+
+	.gradient-border::before {
+		content: '';
+		@apply absolute w-[110%] h-[110%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-45 blur-lg rounded-full bg-linear-45 from-[#BD00FF] via-[#CCFF00] to-[#3958FC];
+	}
+
+	.gradient-inner {
+		@apply relative px-8 py-5 bg-white border-8 border-white rounded-full font-bold;
+	}
+
+	.gradient-inner::before {
+		content: '';
+		@apply absolute size-full top-0 left-0 bg-linear-0 from-[rgba(255,255,255,0.5)] to-[rgba(0,0,0,0.1)] rounded-full;
+	}
+
+	.gradient-inner::after {
+		content: '';
+		@apply absolute size-full top-0 left-0 shadow-[0_2px_6px_4px_rgba(0,0,0,0.1)] rounded-full;
+	}
+
+	.grid-bg {
+		@apply relative w-full bg-[#faf338];
+	}
+
+	.grid-bg::before {
+		content: '';
+		@apply absolute size-full top-0 left-0;
+		background-image:
+			repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0, rgba(0, 0, 0, 0.05) 1px, transparent 1px, transparent 100px),
+			repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.05) 0, rgba(0, 0, 0, 0.05) 1px, transparent 1px, transparent 100px);
+		mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+	}
+}
