@@ -1,6 +1,6 @@
 # Newsletter Footer Component 📨
 
-### [Demo](https://hsiaooooooju.github.io/newsletter_footer)
+### [Demo](https://hsiaooooooju.github.io/newsletter-footer)
 
 The task was to implement a footer based on a given Figma design using HTML and CSS (with optional frameworks/tools).
 This project is deployed via GitHub Pages.
