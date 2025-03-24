@@ -4,6 +4,7 @@
 	font-family: 'Outfit', sans-serif;
 }
 
+
 @layer utilities {
 	.gradient-border {
 		@apply relative bg-linear-45 from-[#BD00FF] from-40% via-[#CCFF00] via-50% to-[#3958FC] to-70% p-0.5 rounded-full hover:bg-linear-135;
@@ -39,5 +40,25 @@
 			repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0, rgba(0, 0, 0, 0.05) 1px, transparent 1px, transparent 100px),
 			repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.05) 0, rgba(0, 0, 0, 0.05) 1px, transparent 1px, transparent 100px);
 		mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+	}
+}
+
+/* Animation */
+@layer utilities {
+
+	@keyframes rotate-gradient {
+		0% {
+			background-image: linear-gradient(45deg, #BD00FF 40%, #CCFF00 50%, #3958FC 70%);
+		}
+		50% {
+			background-image: linear-gradient(90deg, #BD00FF 40%, #CCFF00 50%, #3958FC 70%);
+		}
+		100% {
+			background-image: linear-gradient(135deg, #BD00FF 40%, #CCFF00 50%, #3958FC 70%);
+		}
+	}
+  
+	.rotate-gradient:hover {
+	  animation: rotate-gradient 0.2s ease-in-out;
 	}
 }
